@@ -1,7 +1,14 @@
 import 'package:git_practice/utils/exports.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
+
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  bool visibility = false;
 
   @override
   Widget build(BuildContext context) {
@@ -22,8 +29,22 @@ class Home extends StatelessWidget {
               fontSize: 20,
             ),
           ),
+          Visibility(
+            visible: visibility,
+            child: Text(
+              "Mai achcha app kaise hai?",
+              style: TextStyle(
+                color: Colors.red[400],
+                fontSize: 20,
+              ),
+            ),
+          ),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              setState(() {
+                visibility = true;
+              });
+            },
             style: ButtonStyle(
               backgroundColor: MaterialStateProperty.all<Color>(
                 Colors.blue[50]!,
