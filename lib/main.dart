@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:git_practice/home.dart';
+import 'package:git_practice/utils/exports.dart';
 
 void main() {
   runApp(const MyApp());
